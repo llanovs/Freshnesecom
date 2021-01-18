@@ -27,9 +27,15 @@ body {
 }
 
 /* Reset margin, padding for each of element these types */
-ul, li, div, a {
+ul, li, a {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
+}
+
+li {
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
 }
 
 /* Add transparent for each of element these types */
@@ -38,11 +44,16 @@ button, select, form, input {
     border: transparent;
 }
 
+button {
+    margin-right: 35px;
+}
+
+select, option, .search_category {
+    display: inline-block;
+}
+
 /* Add properties for all of the options in the drop-down list */
 option, select {
-    padding-left: 16px;
-    padding-top: 6px;
-    width: 130px;
     font-family: Poppins, serif;
     font-style: normal;
     font-weight: bold;
@@ -51,11 +62,9 @@ option, select {
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 2px 0;
 }
 
-
-select{
+select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -81,9 +90,7 @@ select{
 .line1 {
     left: 170px;
     top: 11px;
-    /* C1/D */
     border: 1px solid #D1D1D1;
-    /*padding: 14px 354px 12px 130px;*/
 }
 
 /* Draw the item tick */
@@ -120,7 +127,6 @@ select{
 }
 
 .header_list {
-    /*margin-left: 0;*/
     max-height: 16px;
     max-width: 375px;
     display: flex;
@@ -138,7 +144,7 @@ select{
     margin-right: 33px;
 }
 
-.header_item1:last-child, .text:last-child, .small-text:first-child {
+.header_item1:last-child, .text:last-child, .small-text:first-child, button:last-child {
     margin-right: 0;
     margin-left: 0;
 }
@@ -151,6 +157,7 @@ select{
 .header_link:hover, .header_link:focus, .header_link:active {
     opacity: .75;
 }
+
 /* END Header area with short info() first block */
 
 
@@ -158,6 +165,8 @@ select{
 /* Draw Search header panel */
 .search {
     margin: 40px 0 40px 0;
+    padding-bottom: 40px;
+    /* top, right, bottom, left */
 }
 
 .search_form {
@@ -173,32 +182,20 @@ select{
     border: 1px solid #D1D1D1;
     box-sizing: border-box;
     border-radius: 12px;
-}
-
-.search_category {
-    width: 130px;
-    height: 23px;
-    padding-top: 10px;
     padding-left: 16px;
 }
 
-.input-field{
-    width: 262px;
-    padding-left: 38px;
-    margin-top: 8px;
+.input-field {
+    width: 232px;
+    max-width: 232px;
 }
 
 .header_logo {
     margin-right: 158px;
     display: flex;
     align-items: center;
-    padding: 16px 0px;
+    padding: 16px 0;
     float: left;
-}
-
-.all_categories {
-    padding: 10px 8px 9px 16px;
-    /* top, right, bottom, left */
 }
 
 #search_button {
@@ -215,7 +212,7 @@ select{
     float: left;
 }
 
-#cart_amount{
+#cart_amount {
     width: 16px;
     height: 16px;
     padding-top: 12px;
@@ -225,17 +222,32 @@ select{
     float: left;
 }
 
-#user_pic{
+#user_pic {
     width: 24px;
     height: 24px;
     padding-top: 8px;
     float: left;
     background: url("../images/svg/header/ic-actions-user.svg") no-repeat;
 }
+
 /* END Header area with search by category*/
 
 
 /* START Header area with navigation by categories */
+.header_nav2 {
+    background: #F9F9F9;
+    padding: 16px 0 16px 0;
+    margin: 16px 0 16px 0;
+}
+
+.li_item {
+    margin-right: 14px;
+}
+
+.header_nav2-block3{
+    padding: 16px 0 16px 0;
+    margin: 16px 0 16px 0;
+}
 
 /* END Header area with navigation by categories */
 
@@ -250,25 +262,16 @@ select{
 
 /* Text for small text objects */
 .small-text {
-    /* Careers */
     font-family: Open Sans, serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 16px;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-    margin: 38px 0;
 }
 
 
 /* Text for searching categories */
 .medium-text {
-    /* S5/Default */
-
     font-family: Poppins, serif;
     font-style: normal;
     font-weight: 700;
@@ -280,13 +283,27 @@ select{
     margin: 2px 0;
 }
 
+/* Text for searching categories */
+.medium-text2 {
+    font-family: Poppins, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 2px 0;
+}
+
 .huge_text {
-    /* Fruit and vegetables */
     font-family: Poppins, serif;
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
     line-height: 48px;
+    display: inline-block;
+    max-width: 895px;
 }
 
 /*12px 600 normal Poppins*/
@@ -436,4 +453,5 @@ select{
     src: local(''),
     url('../fonts/open-sans-v18-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/open-sans-v18-latin-600.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/open-sans-v18-latin-600.woff') format('woff'), /* Modern Browsers */ url('../fonts/open-sans-v18-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/open-sans-v18-latin-600.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
+
 /* END text categories */
